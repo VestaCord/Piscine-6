@@ -6,6 +6,7 @@
 		"ft_putchar.h": "c",
 		"stdlib.h": "c",
 		"main.h": "c",
-		"ft_is_negative.h": "c"
+		"ft_is_negative.h": "c",
+		"ft_print_reverse_alphabet.h": "c"
 	}
 }
