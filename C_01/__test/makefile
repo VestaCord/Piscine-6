@@ -1,7 +1,7 @@
 # Makefile
 
 NAME = test
-SRC = ./main.c ../ex00/ft_ft.c ../ex01/ft_ultimate_ft.c
+SRC = ./main.c ../ex00/ft_ft.c ../ex01/ft_ultimate_ft.c ../ex02/ft_swap.c ../ex03/ft_div_mod.c ../ex04/ft_ultimate_div_mod.c ../ex05/ft_putstr.c
 OBJ = $(SRC:.c=.o) 
 
 # Implicit Compilation

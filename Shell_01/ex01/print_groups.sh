@@ -12,4 +12,4 @@ INSTRUCTIONS
               显示名称而非编号，与 -ugG 共同使用
 
 NOTE
-id -nG $FT_USER
+id -Gn $FT_USER | tr ' ' ',' | tr -d "\n"
