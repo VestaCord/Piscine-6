@@ -1,8 +1,0 @@
-{
-	"files.associations": {
-		"*.container": "shellscript",
-		"*.network": "shellscript",
-		"*.pod": "shellscript",
-		"ft_ultimate_ft.h": "c"
-	}
-}
