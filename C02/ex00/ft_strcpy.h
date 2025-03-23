@@ -1,1 +1,17 @@
-char *ft_strcpy(char *dest, char *src);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/23 18:51:37 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 18:59:07 by vtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_STRCPY_H
+# define FT_STRCPY_H
+
+char	*ft_strcpy(char *dest, char *src);
+#endif

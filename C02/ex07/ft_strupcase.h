@@ -1,1 +1,17 @@
-char ft_strupcase(char *str);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/23 19:46:12 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 20:10:38 by vtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_STRUPCASE_H
+# define FT_STRUPCASE_H
+
+char	*ft_strupcase(char *str);
+#endif

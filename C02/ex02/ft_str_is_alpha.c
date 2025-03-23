@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.h                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:37:08 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 17:37:08 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/23 19:21:06 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 19:39:31 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUTSTR_H
-# define FT_PUTSTR_H
+int	ft_str_is_alpha(char *str)
+{
+	int	i;
 
-void	ft_putstr(char *str);
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!((str[i] >= 'a' && str[i] <= 'z')
+				|| (str[i] >= 'A' && str[i] <= 'Z')))
+			return (0);
+		i++;
+	}
+	return (1);
+}

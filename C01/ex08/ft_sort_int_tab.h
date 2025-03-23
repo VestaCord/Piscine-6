@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.h                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:37:08 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 17:37:08 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/23 18:32:55 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 18:42:48 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUTSTR_H
-# define FT_PUTSTR_H
+#ifndef FT_SORT_INT_TAB_H
+# define FT_SORT_INT_TAB_H
 
-void	ft_putstr(char *str);
+void	ft_sort_int_tab(int	*tab, int size);
 #endif

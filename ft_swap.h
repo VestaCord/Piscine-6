@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.h                                        :+:      :+:    :+:   */
+/*   ft_swap.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:37:08 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 17:37:08 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/23 17:27:13 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 17:27:13 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUTSTR_H
-# define FT_PUTSTR_H
+#ifndef FT_SWAP_H
+# define FT_SWAP_H
 
-void	ft_putstr(char *str);
+void	ft_swap(int *a, int *b);
 #endif

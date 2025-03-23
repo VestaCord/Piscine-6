@@ -1,17 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.h                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:37:08 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 17:37:08 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/23 19:36:39 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 20:10:39 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUTSTR_H
-# define FT_PUTSTR_H
+char	*ft_strupcase(char *str)
+{
+	int	i;
 
-void	ft_putstr(char *str);
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] = str[i] - 32;
+		}
+		i++;
+	}
+	return (str);
+}

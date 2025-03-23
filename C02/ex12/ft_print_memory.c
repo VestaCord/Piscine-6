@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.h                                        :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:37:08 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 17:37:08 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/23 19:44:59 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 20:47:04 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUTSTR_H
-# define FT_PUTSTR_H
-
-void	ft_putstr(char *str);
-#endif
+void	*ft_print_memory(void *addr, unsigned int size)
+{
+	;
+}

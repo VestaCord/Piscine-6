@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.h                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:37:08 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 17:37:08 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/23 19:24:18 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 19:39:41 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUTSTR_H
-# define FT_PUTSTR_H
+int	ft_str_is_lowercase(char *str)
+{
+	int	i;
 
-void	ft_putstr(char *str);
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!((str[i] >= 'a' && str[i] <= 'z')))
+			return (0);
+		i++;
+	}
+	return (1);
+}

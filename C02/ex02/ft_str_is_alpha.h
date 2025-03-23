@@ -1,1 +1,17 @@
-int ft_str_is_alpha(char *str);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_alpha.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/23 19:22:15 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 19:22:15 by vtian            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_STR_IS_ALPHA_H
+# define FT_STR_IS_ALPHA_H
+
+int	ft_str_is_alpha(char *str);
+#endif

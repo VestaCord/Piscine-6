@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 16:47:47 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 18:59:14 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/23 17:45:57 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 18:48:50 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+// Create a function which sorts an array of integers by ascending order.
+// Outer loop is total sorted, and the (i+1)th smallest number
+// Inner loop is current index, to swap with current smallest if smaller
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
-	while (1)
+	while (i < size)
 	{
-		dest[i] = src[i];
-		if (src[i] == '\0')
+		j = 0;
+		while (j < size)
 		{
-			break ;
+			if (tab[i] <= tab[j])
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			j++;
 		}
 		i++;
 	}
-	return (dest);
 }

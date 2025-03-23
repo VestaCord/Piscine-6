@@ -1,0 +1,14 @@
+{
+	"files.associations": {
+		"*.container": "shellscript",
+		"*.network": "shellscript",
+		"*.pod": "shellscript",
+		"ft_str_is_alpha.h": "c",
+		"ft_strncpy.h": "c",
+		"ft_str_is_lowercase.h": "c",
+		"ft_str_is_uppercase.h": "c",
+		"ft_str_is_numeric.h": "c",
+		"ft_str_is_printable.h": "c",
+		"ft_strcapitalize.h": "c"
+	}
+}

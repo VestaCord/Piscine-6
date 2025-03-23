@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.h                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:37:08 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 17:37:08 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/23 19:23:18 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/23 19:39:34 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUTSTR_H
-# define FT_PUTSTR_H
+int	ft_str_is_numeric(char *str)
+{
+	int	i;
 
-void	ft_putstr(char *str);
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!((str[i] >= '0' && str[i] <= '9')))
+			return (0);
+		i++;
+	}
+	return (1);
+}
