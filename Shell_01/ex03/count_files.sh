@@ -6,4 +6,4 @@ INSTRUCTIONS
 : <<'NOTE'
 Exclude Hidden Directories
 NOTE
-ls -l | awk 'END {print NR}'
+find . -type f -o -type d | wc -l

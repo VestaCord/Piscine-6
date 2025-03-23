@@ -48,4 +48,5 @@ cat /etc/passwd | sed '/^\s*#/d' | sed 's/\s*#.*//' | \
     sort -r | \
     awk '{ print $0; }
         END { print "."; }'| \
-    tr "\n" "," | sed "s/,/, /g" | sed "s/, .,/.\n/g";
+    tr "\n" "," | sed "s/,/, /g" | sed "s/, .,/.\n/g" | \
+    cat -e;
