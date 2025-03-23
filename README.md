@@ -18,7 +18,7 @@ Please check the original repository for further details about its creation and 
 | [C00](https://github.com/VestaCord/Piscine-6/tree/main/C00) | 50% | ✔️ |
 | [C01](https://github.com/VestaCord/Piscine-6/tree/main/C01) | ╳ | ✔️ |
 | [C02](https://github.com/VestaCord/Piscine-6/tree/main/C02) | ╳ | ✔️ |
-| [C03](https://github.com/VestaCord/Piscine-6/tree/main/C03) | ╳ | 🚫 |
+| [C03](https://github.com/VestaCord/Piscine-6/tree/main/C03) | ╳ | ✔️ |
 | [C04](https://github.com/VestaCord/Piscine-6/tree/main/C04) | ╳ | 🚫 |
 | [C05](https://github.com/VestaCord/Piscine-6/tree/main/C05) | ╳ | 🚫 |
 | [C06](https://github.com/VestaCord/Piscine-6/tree/main/C06) | ╳ | 🚫 |
