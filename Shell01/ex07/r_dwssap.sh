@@ -30,6 +30,8 @@ cat /etc/passwd | sed '/^\s*#/d' | sed 's/\s*#.*//' | \
         # Join them in a single line, separated by ", "
     tr "\n" "," | sed "s/,/, /g" | sed "s/, .,/.\n/g";
 
+Can also use `cut -d: -f1` instead of awk -F: '{print $1;}'
+Apparently instead of using awk for FT_LINE can use sed -n "${FT_LINE1},${FT_LINE2}p"
 ## About AWK
 -F sepstring
 juxtaposing two string expressions in awk means to concatenate them
@@ -39,14 +41,15 @@ For some reason awk substr start from 1 instead of 0
 Can call system("echo "$0"|rev") in awk, but inefficient as many children
 NOTE
 
-# FT_LINE1=0;
-# FT_LINE2=10;
+FT_LINE1=7;
+FT_LINE2=15;
 cat /etc/passwd | sed '/^\s*#/d' | sed 's/\s*#.*//' | \
-    awk -v LineStart="$FT_LINE1" -v LineEnd="$FT_LINE2" 'NR >= LineStart && NR <= LineEnd && NR%2==0' | \
+	awk 'NR%2==0' | \
     awk -F: '{print $1;}' | \
     rev | \
     sort -r | \
-    awk '{ print $0; }
-        END { print "."; }'| \
-    tr "\n" "," | sed "s/,/, /g" | sed "s/, .,/.\n/g" | \
+	awk -v LineStart="$FT_LINE1" -v LineEnd="$FT_LINE2" 'NR >= LineStart && NR <= LineEnd' | \
+    tr "\n" "," | \
+	sed "s/,/, /g" | \
+	sed "s/, $/./g" | \
     cat -e;
