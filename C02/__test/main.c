@@ -6,7 +6,7 @@
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 14:41:14 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 20:45:59 by vtian            ###   ########.fr       */
+/*   Updated: 2025/03/24 16:36:32 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@
 #include "../ex09/ft_strcapitalize.h"
 #include "../ex10/ft_strlcpy.h"
 #include "../ex11/ft_putstr_non_printable.h"
+#include "../ex12/ft_print_memory.h"
 
 int	main(void)
 {
-	// char	str[512];
+	char	str[512];
 	// // ex00
 	// printf("\nTesting: %s\n", "ft_strcpy(str, \"Meowow World\");");
 	// ft_strcpy(str, "Meowow World");
@@ -62,19 +63,23 @@ int	main(void)
 	// ft_strcpy(str, "This Is ParTially Majuscule");
 	// printf("\nTesting: %s\n", "ft_strupcase(\"This Is ParTially Majuscule\");");
 	// printf("result: %s\n", ft_strlowcase(str));
-	// ft_strcpy(str, "This Is ParTially Majuscule");
-	// printf("\nTesting: %s\n", "ft_strcapitalize(\"This Is ParTially Majuscule\");");
-	// printf("result: %s\n", ft_strcapitalize(str));
+	ft_strcpy(str, "This Is ParTially Majuscule");
+	printf("\nTesting: %s\n", "ft_strcapitalize(\"This Is ParTially Majuscule\");");
+	printf("result: %s\n", ft_strcapitalize(str));
 
 	// ex10
-	// printf("\nTesting: %s\n", "ft_strlcpy(str, \"Meowow World\");");
-	// printf("size: %d, str: %s\n", ft_strlcpy(str, "123456789", 6), str);
-	// ft_strcpy(str, "");
+	printf("\nTesting: %s\n", "ft_strlcpy(str, \"Meowow World\");");
+	printf("size: %d, str: %s\n", ft_strlcpy(str, "123456789", 6), str);
+	ft_strcpy(str, "");
 
 	// ex11
 	printf("\nTesting: %s\n", "ft_putstr_non_printable(str, \"Coucou\\ntu vas bien ?\");");
 	ft_putstr_non_printable("Coucou\ntu \t vas bien ?");
 	printf("\n");
 	
-	// ex12
+	// // ex12
+	// printf("\nTesting: %s\n", "ft_print_memory(&data, 16);");
+	// char	data[17]="Bonjour les amin";
+	// printf("Expected: %p\n", &data);
+	// ft_print_memory(&data, 16);
 }

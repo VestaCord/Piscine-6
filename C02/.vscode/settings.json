@@ -9,6 +9,7 @@
 		"ft_str_is_uppercase.h": "c",
 		"ft_str_is_numeric.h": "c",
 		"ft_str_is_printable.h": "c",
-		"ft_strcapitalize.h": "c"
+		"ft_strcapitalize.h": "c",
+		"ft_print_memory.h": "c"
 	}
 }

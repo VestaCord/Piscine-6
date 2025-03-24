@@ -1,41 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_print_memory.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 19:42:40 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/24 15:17:56 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/24 15:03:15 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/24 15:03:43 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_PRINT_MEMORY_H
+# define FT_PRINT_MEMORY_H
 
-void	ft_print_hex(char c)
-{
-	char		hex[2];
-	const char	hexbase[17] = "0123456789abcdef";
-
-	hex[0] = hexbase[c / 16];
-	hex[1] = hexbase[c % 16];
-	write(1, hex, 2);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!((str[i] >= 32 && str[i] <= 126)))
-		{
-			write(1, "\\", 1);
-			ft_print_hex(str[i]);
-		}
-		else
-			write(1, str + i, 1);
-		i++;
-	}
-}
+void	*ft_print_memory(void *addr, unsigned int size);
+#endif
