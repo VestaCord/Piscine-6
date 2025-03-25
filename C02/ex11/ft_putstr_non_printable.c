@@ -6,13 +6,13 @@
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 19:42:40 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/24 15:17:56 by vtian            ###   ########.fr       */
+/*   Updated: 2025/03/25 20:00:45 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_hex(char c)
+void	ft_puthex(unsigned char c)
 {
 	char		hex[2];
 	const char	hexbase[17] = "0123456789abcdef";
@@ -22,6 +22,8 @@ void	ft_print_hex(char c)
 	write(1, hex, 2);
 }
 
+// Prints a string with character that can't be displayed shown in the shape of
+// hexadecimals (lowercase), preceeded by a "backslash".
 void	ft_putstr_non_printable(char *str)
 {
 	int	i;
@@ -29,10 +31,10 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!((str[i] >= 32 && str[i] <= 126)))
+		if (!(str[i] >= 32 && str[i] <= 126))
 		{
 			write(1, "\\", 1);
-			ft_print_hex(str[i]);
+			ft_puthex((unsigned char)str[i]);
 		}
 		else
 			write(1, str + i, 1);
