@@ -6,11 +6,12 @@
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:59:35 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/23 21:55:29 by vtian            ###   ########.fr       */
+/*   Updated: 2025/03/25 20:52:59 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 #include "../ex00/ft_strcmp.h"
 #include "../ex01/ft_strncmp.h"
 #include "../ex02/ft_strcat.h"
@@ -56,5 +57,7 @@ int	main(void)
 	// ex05
 	printf("\nTesting: %s\n", "ft_strlcat(Str3, \" 12345\", 11)");
 	char Str3[20] = "12345";
-	printf("Result: %d, %s\n", ft_strlcat(Str3, "12345!", 11), Str3);
+	char Str4[20] = "12345";
+	printf("Result: %u, %s\n", ft_strlcat(Str3, "12345!", 4), Str3);
+	printf("Expected: %lu, %s\n", strlcat(Str4, "12345!", 4), Str4);
 }
