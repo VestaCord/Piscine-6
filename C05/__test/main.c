@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 16:59:40 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/25 22:19:26 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/25 20:57:43 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/25 22:32:12 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <string.h>
 #include <unistd.h>
+#include "../ex01/ft_recursive_factorial.h"
 
-void	ft_putstr(char *str)
+int	main(void)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
+	printf("%d\n", ft_recursive_factorial(42));
 }

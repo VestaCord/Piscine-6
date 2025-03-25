@@ -13,8 +13,8 @@ Please check the original repository for further details about its creation and 
 
 | Project | Final grade | All done |
 |:-------:|:-----:|:------:|
-| [Shell00](https://github.com/VestaCord/Piscine-6/tree/main/Shell00) | 0% | ✔️ |
-| [Shell01](https://github.com/VestaCord/Piscine-6/tree/main/Shell01) | 0% | ✔️ |
+| [Shell00](https://github.com/VestaCord/Piscine-6/tree/main/Shell00) | 100% | ✔️ |
+| [Shell01](https://github.com/VestaCord/Piscine-6/tree/main/Shell01) | 100% | ✔️ |
 | [C00](https://github.com/VestaCord/Piscine-6/tree/main/C00) | 50% | ✔️ |
 | [C01](https://github.com/VestaCord/Piscine-6/tree/main/C01) | ╳ | ✔️ |
 | [C02](https://github.com/VestaCord/Piscine-6/tree/main/C02) | ╳ | ✔️ |

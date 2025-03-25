@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 16:59:40 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/25 22:19:26 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/25 22:35:08 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/25 23:05:12 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putstr(char *str)
+// can be made more efficient by checking only prime numbers
+int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (nb <= 1)
+		return (0);
+	i = 2;
+	while (i <= nb / i)
 	{
-		write(1, &str[i], 1);
+		if (nb % i == 0)
+			return (0);
 		i++;
 	}
+	return (1);
 }
