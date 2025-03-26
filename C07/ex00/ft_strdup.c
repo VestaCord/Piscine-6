@@ -1,38 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 01:17:41 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/26 14:55:16 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/26 15:03:57 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/26 15:26:18 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_print_str(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
-	{
-		write(1, str + i, 1);
+	while (str[i] != '\0')
 		i++;
-	}
+	return (i);
 }
 
-int	main(int argc, char **argv)
+// copy a string and allocate memory for it
+char	*ft_strdup(char *src)
 {
-	int	i;
+	char	*dest;
+	int		src_len;
+	int		i;
 
-	i = argc - 1;
-	while (i > 0)
+	src_len = ft_strlen(src);
+	dest = malloc(src_len + 1);
+	if (!dest)
 	{
-		ft_print_str(argv[i]);
-		ft_print_str("\n");
-		i--;
+		return (NULL);
 	}
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
