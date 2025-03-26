@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"*.container": "shellscript",
+		"*.network": "shellscript",
+		"*.pod": "shellscript",
+		"ft_putstr.h": "c",
+		"ft_strlen.h": "c"
+	}
+}
