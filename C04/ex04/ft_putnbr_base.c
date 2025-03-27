@@ -6,7 +6,7 @@
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:10:21 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/25 22:07:30 by vtian            ###   ########.fr       */
+/*   Updated: 2025/03/27 18:52:22 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	ft_putnbr_base(int nbr, char *base)
 	if (size < 2)
 		return ;
 	n = nbr;
+	if (n == 0)
+		write(1, onumber, 1);
 	if (n < 0)
 	{
 		write(1, "-", 1);
