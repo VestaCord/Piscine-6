@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 15:03:43 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/27 18:51:25 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/27 19:05:19 by vtian             #+#    #+#             */
+/*   Updated: 2025/03/27 19:06:33 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-int	is_separator(char c, char *sep)
-{
-	;
-}
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
 
-int	count_words(char *str, char *sep)
-{
-	;
-}
-
-char	*word_splitter(char *str, char *sep)
-{
-	;
-}
-
-char	**ft_split(char *str, char *charset)
-{
-	;
-}
+typedef int	t_bool;
+void	ft_putstr(char *str);
+t_bool	ft_is_even(int nbr);
+#endif
