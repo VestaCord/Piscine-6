@@ -6,7 +6,7 @@
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 01:16:02 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/26 14:54:52 by vtian            ###   ########.fr       */
+/*   Updated: 2025/03/28 21:41:27 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		ft_print_str(argv[i]);
