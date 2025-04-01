@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.c                                       :+:      :+:    :+:   */
+/*   ft_point.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 19:02:10 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/28 22:35:52 by vtian            ###   ########.fr       */
+/*   Created: 2025/03/28 22:44:28 by vtian             #+#    #+#             */
+/*   Updated: 2025/04/01 18:46:17 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_boolean.h"
+#include "ft_point.h"
+#include <stdio.h>
 
-void	ft_putstr(char *str)
+void	set_point(t_point *point)
 {
-	while (*str)
-		write(1, str++, 1);
+	point->x = 42;
+	point->y = 21;
 }
-
-t_bool	ft_is_even(int nbr)
+int	main(void)
 {
-	return ((EVEN(nbr)) ? TRUE : FALSE);
-}
-
-int	main(int argc, char **argv)
-{
-	(void)argv;
-	if (ft_is_even(argc - 1) == TRUE)
-		ft_putstr(EVEN_MSG);
-	else
-		ft_putstr(ODD_MSG);
-	return (SUCCESS);
+	t_point point;
+	
+	set_point(&point);
+	printf("x: %d\n", point.x);
+    printf("y: %d\n", point.y);
+	return (0);
 }
