@@ -3,94 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: vtian <vtian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 17:11:29 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/27 16:31:30 by vtian            ###   ########.fr       */
+/*   Created: 2025/04/03 17:03:50 by vtian             #+#    #+#             */
+/*   Updated: 2025/04/03 17:05:43 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// returns base if none of: +, -, non-printable, repeats
-int	ft_check_base(char *base)
-{
-	int	i;
-	int	j;
+#include <stdio.h>
 
-	i = 0;
-	while (base[i])
+int	count_digit(long long num, int base)
+{
+	int	count;
+
+	count = 0;
+	if (num == 0)
+		return (1);
+	while (num != 0)
 	{
-		j = i + 1;
-		if (base[i] == '+' || base[i] == '-'
-			|| base[i] < 32 || base[i] > 126)
-			return (0);
-		while (base[j])
-		{
-			if (base[i] == base[j])
-				return (0);
-			j++;
-		}
-		i++;
+		num /= base;
+		count++;
 	}
-	return (i);
+	return (count);
 }
 
-// return onumber in decimal if found in base, else -1
-int	ft_base_match(char c, char *base)
+long long	ft_recursive_power(int nb, int power)
 {
-	int	i;
-
-	i = 0;
-	while (base[i])
+	if (power < 0)
 	{
-		if (c == base[i])
-			return (i);
-		i++;
-	}
-	return (-1);
-}
-
-// atoi preprocess: traverses spaces and signs, returns sign ptr
-int	ft_atoi_preprocess(char *str, int *ptr_sign)
-{
-	int	sign;
-	int	i;
-
-	sign = 1;
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	while (str[i] && (str[i] == '+' || str[i] == '-'))
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	*ptr_sign = sign;
-	return (i);
-}
-
-// atoi preprocessing (handle leading '+', '-', ' ')
-// converts str to decimal int according to base
-int	ft_atoi_base(char *str, char *base)
-{
-	int		i;
-	int		sign;
-	int		sum;
-	int		current;
-	int		base_size;
-
-	base_size = ft_check_base(base);
-	if (base_size < 2)
 		return (0);
-	sum = 0;
-	sign = 1;
-	i = ft_atoi_preprocess(str, &sign);
-	current = ft_base_match(str[i], base);
-	while (current != -1)
-	{
-		sum = (sum * base_size) + current;
-		i++;
-		current = ft_base_match(str[i], base);
 	}
-	return (sign * sum);
+	else if (power == 0)
+	{
+		return (1);
+	}
+	return (nb * ft_recursive_power(nb, power - 1));
+}
+
+char	*ft_itoa_base(long long input, char *base_size, int base)
+{
+	char		*result;
+	int			digit;
+	int			i;
+	long long	num;
+
+	digit = count_digit(input, base);
+	result = malloc(digit + 1 + (input < 0));
+	if (!result)
+		return ((void *)0);
+	i = 0;
+	if (input < 0)
+	{
+		result[i++] = '-';
+		input = -input;
+	}
+	while (digit > 0)
+	{
+		num = input / ft_recursive_power(base, digit - 1);
+		result[i++] = base_size[num];
+		input -= num * ft_recursive_power(base, digit-- - 1);
+	}
+	result[i] = '\0';
+	return (result);
 }

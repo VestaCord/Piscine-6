@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: vtian <vtian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 15:03:51 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/27 16:19:11 by vtian            ###   ########.fr       */
+/*   Updated: 2025/04/03 14:16:21 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ char	*ft_malloc_joined_str(int size, char **strs, char *sep)
 			sum += ft_strlen(strs[i]);
 			i++;
 		}
-		sum += ft_strlen(sep) * size - 1;
+		sum += ft_strlen(sep) * size - 1; // size -1 should be in parentheses, if not there is extra size
 	}
-	joined_str = (char *) malloc(sizeof(char) * sum);
+	joined_str = (char *) malloc(sizeof(char) * sum); // should + 1 for null terminator
 	if (joined_str == NULL)
 		return (0);
 	return (joined_str);

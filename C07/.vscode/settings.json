@@ -3,6 +3,7 @@
 		"*.container": "shellscript",
 		"*.network": "shellscript",
 		"*.pod": "shellscript",
-		"cstdlib": "c"
+		"cstdlib": "c",
+		"stdio.h": "c"
 	}
 }

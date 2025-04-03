@@ -3,103 +3,109 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtian <vtian@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: vtian <vtian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 15:03:45 by vtian             #+#    #+#             */
-/*   Updated: 2025/03/27 18:49:32 by vtian            ###   ########.fr       */
+/*   Created: 2025/04/03 17:03:44 by vtian             #+#    #+#             */
+/*   Updated: 2025/04/03 17:05:55 by vtian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-int	ft_check_base(char *base);
-int	ft_atoi_base(char *str, char *base);
+int			count_digit(long long num, int number_system);
+long long	ft_recursive_power(int nb, int power);
+char		*ft_itoa_base(long long input, char *base, int number_system);
 
-int	ft_strlen(char *str)
+char	*ft_preprocess(char *str, int *sign)
 {
-	int	len;
+	int	step;
+
+	step = 0;
+	*sign = 1;
+	while (*str == 0x20 || (*str >= 0x09 && *str <= 0x0D))
+		str++;
+	while (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+		{
+			*sign = -*sign;
+		}
+		str++;
+	}
+	return (str);
+}
+
+int	ft_base_check(char *str)
+{
+	unsigned int	len;
+	unsigned int	i;
 
 	len = 0;
-	while (str[len])
-		len++;
-	return (len);
+	i = 0;
+	if (!str || str[i] == '\0' || str[i + 1] == '\0')
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (str[i + 1] != '\0' && str[i] == str[i + 1])
+			return (0);
+		if (str[i] == '+' || str[i] == '-' || str[i] == ' ')
+			return (0);
+		if (str[i] >= 9 && str[i] <= 13)
+			return (0);
+		i++;
+	}
+	return (i);
 }
 
-int	ft_count_digits(int nbr, char *base, int digits)
+int	ft_getnum(char c, char *base)
 {
-	int		size;
-	int		tmp;
+	int	result;
 
-	size = 0;
-	while (base[size])
-		size++;
-	tmp = nbr;
-	if (tmp < 0)
+	result = 0;
+	while (base[result] != '\0')
 	{
-		tmp *= -1;
-		digits++;
+		if (c == base[result])
+			return (result);
+		result++;
 	}
-	while (tmp >= size)
-	{
-		tmp /= size;
-		digits++;
-	}
-	digits++;
-	return (digits);
+	return (-1);
 }
 
-// Returns the result of the conversion of string nbr from decimal to base_to
-void	ft_putnbr_base(int nbr, char *base, char *converted)
+long long	ft_atoi_base(char *str, char *base, int number_system)
 {
-	int		size;
-	long	tmp;
-	int		first;
-	int		last;
+	long long	result;
+	int			num;
 
-	size = ft_strlen(base);
-	last = ft_count_digits(nbr, base, 0);
-	tmp = nbr;
-	first = 0;
-	if (tmp < 0)
+	result = 0;
+	while (*str != '\0')
 	{
-		converted[0] = '-';
-		tmp *= -1;
-		first++;
+		num = ft_getnum(*str++, base);
+		if (num == -1)
+			return (result);
+		result *= number_system;
+		result += num;
 	}
-	last--;
-	while (tmp >= size)
-	{
-		converted[last] = base[tmp % size];
-		tmp /= size;
-		last--;
-	}
-	if (tmp < size)
-		converted[first] = base[tmp];
+	return (result);
 }
 
-// Returns the result of the conversion of string nbr from base_from to base_to
-// nbr, base_from, base_to may be not writable.
-// nbr will follow the same rules as ft_atoi_base (from an other module).
-// Beware of '+', '-', and ' '.
-// The number represented by nbr must fit inside an int.
-// If a base is wrong, NULL should be returned.
-// The returned number can only be prefixed by '-' if necessary.
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	char	*converted;
-	int		decimal;
-	int		digits;
+	int			number_system_input;
+	int			number_system_output;
+	long long	result;
+	char		*input;
+	int			sign;
 
-	if (ft_check_base(base_to) == 0 || ft_check_base(base_from) == 0)
+	number_system_input = ft_base_check(base_from);
+	number_system_output = ft_base_check(base_to);
+	if (nbr == 0 || number_system_input == 0 || number_system_output == 0)
 		return (0);
-	decimal = ft_atoi_base(nbr, base_from);
-	digits = ft_count_digits(decimal, base_to, 0);
-	converted = (char *)malloc(sizeof(char) * (digits + 1));
-	if (converted == NULL)
+	input = ft_preprocess(nbr, &sign);
+	if (!(*input >= '0' && *input <= '9'))
 		return (0);
-	ft_putnbr_base(decimal, base_to, converted);
-	converted[digits] = '\0';
-	return (converted);
+	result = ft_atoi_base(input, base_from, number_system_input);
+	result *= sign;
+	return (ft_itoa_base(result, base_to, number_system_output));
 }
 
 // #include <stdio.h>
@@ -109,7 +115,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 // 	char	*oct = "012345678";
 // 	char	*dec = "0123456789";
 // 	char	*bin = "01";
-// 	char	*nbr = "111101110";
+// 	char	*nbr = "  -   +-111101110";
 
 // 	printf("%s to decimal: %s\n", nbr, ft_convert_base(nbr, bin, dec));
 // 	printf("%s to octal: %s\n", nbr, ft_convert_base(nbr, bin, oct));
